@@ -1,8 +1,9 @@
 <?php
 
 use App\Http\Controllers\contcategory;
+use App\Http\Controllers\contregister;
 use Illuminate\Support\Facades\Route;
-use App\Models\barangs\barang;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -54,11 +55,9 @@ Route::get('/login', function () {
     ]);
 });
 
-Route::get('/register', function () {
-    return view('register', [
-        "title" => "Register"
-    ]);
-});
+Route::get('/register', [contregister::class, 'index']);
+
+Route::post('/register', [contregister::class, 'store']);
 
 Route::get('/rempahkatpro', [contcategory::class, 'spice']);
 
@@ -71,6 +70,8 @@ Route::get('/testnih', function () {
 Route::get('/sayurkatepro', [contcategory::class, 'vegetable']);
 
 Route::get('/singleProduk/{id}', [contcategory::class, 'singleProduct']);
+
+Route::get('/searchbarang', [contcategory::class, 'search']);
 
 Route::get('/userprofile', function () {
     return view('userprofile', [

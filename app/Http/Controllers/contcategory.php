@@ -7,6 +7,20 @@ use Illuminate\Http\Request;
 
 class contcategory extends Controller{
 
+    public function search(){
+        
+        $barang = barang::latest();
+
+        if(request('search')){
+            $barang->where('name', 'like', '%' . request('search') . '%');
+        }
+
+        return view('search',[
+            "title" => "Search",
+            "item" => $barang->get()
+        ]);
+    }
+
     public function vegetable(){
 
         return view('sayurkatepro', [

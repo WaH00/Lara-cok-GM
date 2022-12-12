@@ -19,23 +19,22 @@
         <div class="row row-produk">
             <div class="col-lg-5">
                 <figure class="figure">
-                    <img src="/assets/produk/sayur/sayur1.jpg" class="figure-img img-fluid" id="idSglimage1"
-                        style="border-radius: 5px; width: 400px;">
+                    <img src={{ $item->photo }}  class="figure-img img-fluid" id="idSglimage1" style="border-radius: 5px; width: 400px;">
                     <figcaption class="figure-caption d-flex justify-content-evenly">
                         <a href="#">
-                            <img src="/assets/produk/sayur/sayur1.jpg" class="figure-img img-fluid" id="idSglimage2"
+                            <img src={{ $item->photo }} class="figure-img img-fluid" id="idSglimage2"
                                 style="border-radius: 5px; width: 70px; height: 70px;">
                         </a>
                         <a href="#">
-                            <img src="/assets/produk/sayur/sayur1.jpg" class="figure-img img-fluid" id="idSglimage3"
+                            <img src={{ $item->photo }} class="figure-img img-fluid" id="idSglimage3"
                                 style="border-radius: 5px; width: 70px; height: 70px;">
                         </a>
                         <a href="#">
-                            <img src="/assets/produk/sayur/sayur1.jpg" class="figure-img img-fluid" id="idSglimage4"
+                            <img src={{ $item->photo }} class="figure-img img-fluid" id="idSglimage4"
                                 style="border-radius: 5px; width: 70px; height: 70px;">
                         </a>
                         <a href="#">
-                            <img src="/assets/produk/sayur/sayur1.jpg" class="figure-img img-fluid" id="idSglimage5"
+                            <img src={{ $item->photo }} class="figure-img img-fluid" id="idSglimage5"
                                 style="border-radius: 5px; width: 70px; height: 70px;">
                         </a>
                     </figcaption>
