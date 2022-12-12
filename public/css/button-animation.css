@@ -1,0 +1,31 @@
+.btn-animated{
+    display: inline-block;
+    position: relative;
+}
+
+.btn-p{
+    position: relative;
+    z-index: 1;
+}
+
+.btn-animated::after{
+    position: absolute;
+    content: "";
+    left: 50%;
+    top: 50%;
+    height: 0%;
+    width: 0%;
+    background-color: #288d5d;
+    transition: 0.5s;
+    transform: translateX(0%) translateY(0%);
+    border-radius: 500%;
+}
+
+.btn-animated:hover::after{
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 0%;
+    transform: translateX(0%) translateY(0%);
+}
