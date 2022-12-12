@@ -75,3 +75,18 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+
+
+##starting
+
+COPY DULU  .env.example file to .env and edit database credentials there
+
+
+##Command 
+composer install
+php artisan key:generate
+php artisan artisan migrate:fresh --seed
+php artisan storage:link
+
