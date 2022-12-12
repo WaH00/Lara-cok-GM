@@ -33,9 +33,12 @@ If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Lar
 
 We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
+##starting
+
 COPY DULU  .env.example file to .env and edit database credentials there
 
-Command 
+
+##Command 
 composer install
 php artisan key:generate
 php artisan artisan migrate:fresh --seed
