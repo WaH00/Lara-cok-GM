@@ -26,12 +26,27 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ ($title === "Help") ? 'active': '' }}" href="/help">HELP</a>
-                <li class="nav-item">
-                    <a class="nav-link {{ ($title === "Login") ? 'active': '' }}" href="/login">LOGIN</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link {{ ($title === "Register") ? 'active': '' }}" href="/register">REGISTER</a>
-                </li>
+
+                @auth
+                    <li class="nav-item">
+                        <a class="nav-link {{ ($title === "Profile") ? 'active': '' }}" href="/userprofile">{{ auth()->user()->name }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <form action="/logout" method="post">
+                            @csrf
+                            <button type="submit" class="btn btn-link text-decoration-none nav-link">Logout <i class="bi bi-arrow-right-square"></i></button> 
+                        </form>
+                    </li>
+                @else    
+                    <li class="nav-item">
+                        <a class="nav-link {{ ($title === "Login") ? 'active': '' }}" href="/login">LOGIN</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ ($title === "Register") ? 'active': '' }}" href="/register">REGISTER</a>
+                    </li>
+                @endauth
+                
             </ul>
         </div>
     </div>

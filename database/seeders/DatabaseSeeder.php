@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\User;
 use App\Models\barang;
 use App\Models\kategori;
 use Illuminate\Database\Seeder;
@@ -85,5 +86,6 @@ class DatabaseSeeder extends Seeder
         barang::create(['category_id'=>4,'name'=>'Bawang Putih[1KG]', 'price'=>98000,'stock'=>100,'photo'=>'../image/produk/rempah/rempah10.jpg']);
         barang::create(['category_id'=>4,'name'=>'Bawang Merah [1KG]', 'price'=>60000,'stock'=>100,'photo'=>'../image/produk/rempah/rempah11.jpg']);
         barang::create(['category_id'=>4,'name'=>'Jinten[1KG]', 'price'=>58000,'stock'=>100,'photo'=>'../image/produk/rempah/rempah12.jpg']);
+    
     }
 }

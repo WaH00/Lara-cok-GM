@@ -57,13 +57,4 @@ class contcategory extends Controller{
         
     }
 
-    public function singleProduct($id){
-        
-        return view('singleProduk', [
-            "title" => "Request",
-            "item" => barang::find($id)
-
-        ]);
-    }
-
 }

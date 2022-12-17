@@ -15,11 +15,8 @@ return new class extends Migration
     {
         Schema::create('user_details', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users');
             $table->string('adress');
             $table->string('telp');
-            $table->string('gender');
-            $table->date('birth');
             $table->timestamps();
         });
     }

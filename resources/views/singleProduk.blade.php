@@ -17,50 +17,54 @@
     <!-- START Single-Produk -->
     <div class="container">
         <div class="row row-produk">
-            <div class="col-lg-5">
-                <figure class="figure">
-                    <img src={{ $item->photo }}  class="figure-img img-fluid" id="idSglimage1" style="border-radius: 5px; width: 400px;">
-                    <figcaption class="figure-caption d-flex justify-content-evenly">
-                        <a href="#">
-                            <img src={{ $item->photo }} class="figure-img img-fluid" id="idSglimage2"
-                                style="border-radius: 5px; width: 70px; height: 70px;">
-                        </a>
-                        <a href="#">
-                            <img src={{ $item->photo }} class="figure-img img-fluid" id="idSglimage3"
-                                style="border-radius: 5px; width: 70px; height: 70px;">
-                        </a>
-                        <a href="#">
-                            <img src={{ $item->photo }} class="figure-img img-fluid" id="idSglimage4"
-                                style="border-radius: 5px; width: 70px; height: 70px;">
-                        </a>
-                        <a href="#">
-                            <img src={{ $item->photo }} class="figure-img img-fluid" id="idSglimage5"
-                                style="border-radius: 5px; width: 70px; height: 70px;">
-                        </a>
-                    </figcaption>
-                </figure>
-            </div>
-            <div class="col-lg-7">
-                <h4 class="fs-1">{{ $item->name }}</h4>
-                <div class="border-top border-4 border-dark">{{ $item->Kategori->name}}</div>
-                <h3 class="d-flex">
-                    <div class="fs-3">Rp. {{ $item->price }}</div>
-                </h3>
-                <button type="button" class="btn btn-dark"><i class="fas fa-minus" onclick="removeItem();"> </i></button>
-                <span class="mx-2" id="quantity">0</span>
-                <button type="button" class="btn btn-warning"><i class="fas fa-plus text-white" onclick="addItem();"> </i></button>
-                <span class="ms-2">tersisa</span>
-                <span id="stockBarang">{{ $item->stock }}</span>
-
-                <div class="btn-produk mt-5">
-                    <a href="#" class="btn btn-dark text-white btn-lg me-2 btn-cos"> Masuk Keranjang
-                        <i class="fas fa-shopping-cart fs-6 me-2"></i>
-                    </a>
-                    <a href="#" class="btn btn-warning text-white btn-lg btn-cos">Beli</a>
+            <form action="/singleproduct" method="post" class="d-flex">
+                @csrf
+                <div class="col-lg-5">
+                    <figure class="figure">
+                        <img src={{ $item->photo }}  class="figure-img img-fluid" id="idSglimage1" style="border-radius: 5px; width: 400px;">
+                        <figcaption class="figure-caption d-flex justify-content-evenly">
+                            <a href="#">
+                                <img src={{ $item->photo }} class="figure-img img-fluid" id="idSglimage2"
+                                    style="border-radius: 5px; width: 70px; height: 70px;">
+                            </a>
+                            <a href="#">
+                                <img src={{ $item->photo }} class="figure-img img-fluid" id="idSglimage3"
+                                    style="border-radius: 5px; width: 70px; height: 70px;">
+                            </a>
+                            <a href="#">
+                                <img src={{ $item->photo }} class="figure-img img-fluid" id="idSglimage4"
+                                    style="border-radius: 5px; width: 70px; height: 70px;">
+                            </a>
+                            <a href="#">
+                                <img src={{ $item->photo }} class="figure-img img-fluid" id="idSglimage5"
+                                    style="border-radius: 5px; width: 70px; height: 70px;">
+                            </a>
+                        </figcaption>
+                    </figure>
                 </div>
-            </div>
-        </div>
-
+                <div class="col-lg-7">
+                        <h4 class="fs-1">{{ $item->name }}</h4>
+                        <div class="border-top border-4 border-dark">{{ $item->Kategori->name}}</div>
+                        <h3 class="d-flex">
+                            <div class="fs-3">Rp. {{ $item->price }}</div>
+                        </h3>
+                        <button type="button" class="btn btn-dark"><i class="fas fa-minus" onclick="removeItem();"> </i></button>
+                        <span class="mx-2" id="quantity">0</span>
+                        <button type="button" class="btn btn-warning"><i class="fas fa-plus text-white" onclick="addItem();"> </i></button>
+                        <span class="ms-2">tersisa</span>
+                        <span id="stockBarang">{{ $item->stock }}</span>
+                        <input type="hidden">
+                        <input type="hidden">
+                        <input type="hidden">
+                        <input type="hidden">
+                        <div class="btn-produk mt-5">
+                            <button type="submit" class="btn btn-dark text-white btn-lg me-2 btn-cos"> Masuk Keranjang
+                                <i class="fas fa-shopping-cart fs-6 me-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
         <!-- START DESC&REVIEW PRODOK -->
         <div class="row row-produk pt-2">
             <div class="col-12">
