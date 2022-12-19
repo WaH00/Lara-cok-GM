@@ -42,6 +42,7 @@ Route::get('/help', function () {
 });
 
 Route::get('/homePage', [conthome::class, 'index']); 
+
 Route::get('/keranjang', [contcart::class, 'index'])->middleware('auth');
 
 // LOGIN ROUTE
@@ -66,7 +67,7 @@ Route::get('/rempahkatpro', [contcategory::class, 'spice']);
 
 // SINGLE ROUTE
 Route::get('/singleProduk/{id}', [contproduct::class, 'index']);
-Route::post('/singleProduk/{id}', [contproduct::class, 'store']);
+Route::post('/singleProduk', [contproduct::class, 'store']);
 
 
 Route::get('/searchbarang', [contcategory::class, 'search']);

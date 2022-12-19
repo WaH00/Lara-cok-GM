@@ -17,8 +17,8 @@
     <!-- START Single-Produk -->
     <div class="container">
         <div class="row row-produk">
-            <form action="/singleproduct" method="post" class="d-flex">
-                @csrf
+            <form method="post" action="/singleProduk" class="d-flex">
+                @csrf 
                 <div class="col-lg-5">
                     <figure class="figure">
                         <img src={{ $item->photo }}  class="figure-img img-fluid" id="idSglimage1" style="border-radius: 5px; width: 400px;">
@@ -48,19 +48,25 @@
                         <h3 class="d-flex">
                             <div class="fs-3">Rp. {{ $item->price }}</div>
                         </h3>
-                        <button type="button" class="btn btn-dark"><i class="fas fa-minus" onclick="removeItem();"> </i></button>
-                        <span class="mx-2" id="quantity">0</span>
-                        <button type="button" class="btn btn-warning"><i class="fas fa-plus text-white" onclick="addItem();"> </i></button>
+                        <div class="row">
+                            <div class="col-2">
+                                <input type="hidden" class="form-control" value="{{ $user_id }}" name="user_id" id="user_id">
+                                <input type="hidden" class="form-control" value="{{ $item->id }}" name="product_id" id="product_id">
+                                <input type="number" class="mx-2 form-control ms-0" id="quantity" name="quantity" value="0" min="0" max="{{ $item->stock }}">
+                            </div>
+                        </div>
                         <span class="ms-2">tersisa</span>
                         <span id="stockBarang">{{ $item->stock }}</span>
-                        <input type="hidden">
-                        <input type="hidden">
-                        <input type="hidden">
-                        <input type="hidden">
                         <div class="btn-produk mt-5">
                             <button type="submit" class="btn btn-dark text-white btn-lg me-2 btn-cos"> Masuk Keranjang
                                 <i class="fas fa-shopping-cart fs-6 me-2"></i>
                             </button>
+                            @if(session()->has('success'))
+                                <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">    
+                                    {{ session('success') }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>

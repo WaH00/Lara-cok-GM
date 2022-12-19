@@ -19,7 +19,6 @@
     <link rel="stylesheet" type="text/css" href="css/styleKeranjang.css">
     <link rel="stylesheet" type="text/css" href="css/stylProduk.css">
     <link rel="stylesheet" type="text/css" href="css/userprofile.css">
-    <script src="../js/addDelete.js"></script>
     <script src="https://kit.fontawesome.com/1826708ff8.js" crossorigin="anonymous"></script>
     <title>{{ $title }}</title>
 </head>

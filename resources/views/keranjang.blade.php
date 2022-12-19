@@ -29,18 +29,21 @@
                         </tr>
                     </thead>
                     <tbody class="align-middle" id="tableBody">
-                        <tr>
-                            <th scope="row"><a href=""><i class="fa-solid fa-trash text-success fs-4"></i></a></th>
-                            <td><img src="../assets/produk/buah/buah1.jpg" class="img-cart"></td>
-                            <td>Apple[1KG]</td>
-                            <td>Rp.40000</td>
-                            <td>
-                                <button type="button" class="btn btn-dark"><i class="fas fa-minus"> </i></button>
-                                <span class="mx-2">1</span>
-                                <button type="button" class="btn btn-dark"><i class="fas fa-plus"></i></button>
-                            </td>
-                            <td>Rp.40000</td>
-                        </tr>
+                        @foreach ($cart as $item)
+                            <tr>
+                                <th scope="row"><a href=""><i class="fa-solid fa-trash text-success fs-4"></i></a></th>
+                                <td><img src="{{ $item->barang->photo }}" class="img-cart"></td>
+                                <td>{{ $item->barang->name }}</td>
+                                <td>Rp.{{ $item->barang->price }}</td>
+                                <td>
+                                    <button type="button" class="btn btn-dark"><i class="fas fa-minus"> </i></button>
+                                    <span class="mx-2">{{ $item->quantity }}</span>
+                                    <button type="button" class="btn btn-dark"><i class="fas fa-plus"></i></button>
+                                </td>
+                                <td>Rp. </td>
+                            </tr>
+                        @endforeach
+                        
                     </tbody>
                 </table>
             </div>

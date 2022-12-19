@@ -26,7 +26,7 @@ class contregister extends Controller
 
         $validdatauser = $request->validate([
             'name'=>['required','max:255'],
-            'email'=>'required|email:dns|unique:users',
+            'email'=>'required|email:dns',
             'username'=>'required|min:8|max:50',
             'password'=>'required|min:8'
         ]);

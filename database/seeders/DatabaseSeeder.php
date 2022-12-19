@@ -33,7 +33,7 @@ class DatabaseSeeder extends Seeder
         kategori::create(['name'=>'Rempah']);   
         
         // tabel sayur
-        barang::create(['category_id'=>1, 'name'=>'Brokoli[1KG]', 'price'=>40000,'stock'=>100,'photo'=>'../image/produk/sayur/sayur1.jpg']);
+        barang::create(['category_id'=>1, 'name'=>'Brokoli[1KG]', 'price'=>40000,'stock'=>90,'photo'=>'../image/produk/sayur/sayur1.jpg']);
         barang::create(['category_id'=>1, 'name'=>'Bayam[300gr]', 'price'=>20000, 'stock'=>100, 'photo'=>'../image/produk/sayur/sayur2.jpg']);
         barang::create(['category_id'=>1, 'name'=>'Wortel[500gr]', 'price'=>30000, 'stock'=>100, 'photo'=>'../image/produk/sayur/sayur3.jpg']);
         barang::create(['category_id'=>1, 'name'=>'Tomat[500gr]', 'price'=>35000, 'stock'=>100, 'photo'=>'../image/produk/sayur/sayur4.jpg']);
