@@ -76,3 +76,13 @@ Route::get('/userprofile', function () {
         "title" => "Profile"
     ]);
 });
+
+
+// ADMIN ROUTE 
+Route::get('/admin-test', function () {
+    return view('admin-test',[
+        "title" => "admin"
+    ]);
+});
+
+
